@@ -26,8 +26,8 @@
   "homepage": "https://github.com/AtomLinter/linter-php",
   "_id": "linter-php@1.0.2",
   "_shasum": "643eda5766114ac2daa1f873c74b83e00817dcb4",
-  "_resolved": "file:../d-115624-3165-isv6wk/package.tgz",
-  "_from": "../d-115624-3165-isv6wk/package.tgz",
+  "_resolved": "file:../d-115624-5804-w5ly1i/package.tgz",
+  "_from": "../d-115624-5804-w5ly1i/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
