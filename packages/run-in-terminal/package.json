@@ -1,0 +1,38 @@
+{
+  "name": "run-in-terminal",
+  "main": "./lib/run-in-terminal",
+  "version": "0.4.1",
+  "description": "Run some commands in terminal, or just run terminal",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pohmelie/run-in-terminal"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {},
+  "readme": "# run-in-terminal package\n\nAtom package for run some commands in terminal, or just run terminal.\n\n## Why?\nSome packages can run terminal «here», some can run scripts not in terminal, but tabs/views/etc. I prefer terminal, so this one can run terminal «here» with any arguments and run scripts or any kind of shell «one-liners».\n\n## Features\n* start terminal here\n* start terminal here and run some command\n* string interpolation with arguments\n* understanding shebang\n* launchers — file extension based command chooser\n\n## Options\n\n| Field                          |   Type  |                Description                               |        Default value             |                 Example value                   |\n|:------------------------------:|:-------:|:--------------------------------------------------------:|:--------------------------------:|:-----------------------------------------------:|\n| Terminal                       | string  | command to start terminal with argumenst                 | your-favorite-terminal arguments | konsole --noclose --workdir {working_directory} |\n| Terminal execution argument    | string  | argument to run some command in terminal                 | terminal-execution-argument      | -e                                              |\n| List of launchers by extension | string  | comma separated pairs: extension-launcher                | your-launchers                   | .py python3 {file_path}, .lua lua {file_path}   |\n| Save file before run terminal  | boolean |                                                          | true                             | true                                            |\n| Use exec cwd                   | boolean | child_process.exec cwd parameter                         | true                             | true                                            |\n| Use shebang                    | boolean | use shebang if available                                 | true                             | true                                            |\n| Autoquotation                  | boolean | adding double quotation mark to interpolation parameters | true                             | true                                            |\n\n#### Windows users may use «start» command with «cmd»:\n\n    start /D {working_directory} C:\\Windows\\System32\\cmd.exe /u\n\nand «terminal execution argument»:\n\n    /k\n\n#### Mac users may use «open» command with their favorite terminal app:\n\n    open -a /path/to/terminal.app\n\n## Interpolation parameters\n| Parameter           | Description                       |\n|:-------------------:|:---------------------------------:|\n| {file_path}         | path to current file              |\n| {working_directory} | path to current working directory |\n| {project_directory} | path to project's root directory  |\n| {git_directory}     | path to nearest git root directory|\n\n## How it works\nIn deep, run-in-terminal use node.js child_process.exec function, so exec have cwd (current working directory) argument. But it doesn't works for any terminal. Some of them need launch «working directory» argument. That's why run-in-terminal have string interpolation of arguments. What is string interpolation means? run-in-terminal build full command at first step and replace predefined substrings with parameters at second. For values from «example value» column above we can have such scenario: opened /path/to/somedir/foo.py, which have #!/usr/bin/python3 shebang\n\n    start-terminal-here-and-run -> konsole --noclose --workdir {working_directory} -e /usr/bin/python3 {file_path}\n\nthis will be interpolated to:\n\n    start-terminal-here-and-run -> konsole --noclose --workdir \"/path/to/somedir\" -e /usr/bin/python3 \"/path/to/somedir/foo.py\"\n\nIf run-in-terminal can't determine launcher or file_path (file not saved and have no name) it will do start-terminal-here.\n\n## Thanks to:\n[bobrocke](https://github.com/bobrocke), [clintwood](https://github.com/clintwood), [LeoVerto](https://github.com/LeoVerto)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/pohmelie/run-in-terminal/issues"
+  },
+  "homepage": "https://github.com/pohmelie/run-in-terminal",
+  "_id": "run-in-terminal@0.4.1",
+  "_shasum": "5f8f66225305ef81a9c30a3c3ac5bdeb57e4e6af",
+  "_resolved": "file:../d-115624-3051-1svvbpx/package.tgz",
+  "_from": "../d-115624-3051-1svvbpx/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".coffee": [
+        "lib/run-in-terminal.coffee"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
