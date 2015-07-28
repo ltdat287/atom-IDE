@@ -8,8 +8,12 @@
       "atom-dark-ui"
       "base16-tomorrow-dark-theme"
     ]
+    disabledPackages: [
+      "linter-phpcs"
+    ]
   editor:
     invisibles: {}
     tabLength: 4
   "linter-phpmd": {}
   linter: {}
+  "highlight-line": {}

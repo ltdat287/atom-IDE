@@ -59,3 +59,4 @@ module.exports =
               dismissable: true
             handle()
             resolve []
+            process.env.PATH = ["/Applications/MAMP/bin/php/php5.6.2/bin", process.env.PATH].join(":")
